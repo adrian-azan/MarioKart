@@ -10,6 +10,7 @@ if __name__ == '__main__':
     window = tk.Tk()
     tileNames = []
     tileOwners = []
+    
 
     input = open("master.txt",'r')
     names = input.readlines()
@@ -23,13 +24,14 @@ if __name__ == '__main__':
         for j in range(12):
             
             btn = button(window, tileNames[i*12+j], tileOwners[i*12+j])
+            allTiles.append(btn)
             btn.tile.grid(row=i,column=j,sticky="NSWE")
             window.rowconfigure(i,weight=1)
             window.columnconfigure(j,weight=1)
             
             
     
-    
+   
 
     window.mainloop()
     

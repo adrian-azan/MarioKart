@@ -1,3 +1,8 @@
 
-player1 = "Adrian"
-player2 = "Amanda"
+from player import *
+
+player1 = player("Adrian","red")
+player2 = player("Amanda","blue")
+allTiles = []
+
+
