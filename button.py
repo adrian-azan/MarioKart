@@ -12,6 +12,23 @@ class button:
             self.tile.configure(bg=player1.color)
             self.tileLabel.configure(bg=player1.color)
 
+        if checkCapture(self.row,self.col-1) == True: #left
+            allTiles[self.row*COLS+(self.col-1)].tile.configure(bg=player1.color)
+            allTiles[self.row*COLS+(self.col-1)].tileLabel.configure(bg=player1.color)
+        
+        if checkCapture(self.row,self.col+1) == True: #right
+            allTiles[self.row*COLS+(self.col+1)].tile.configure(bg=player1.color)
+            allTiles[self.row*COLS+(self.col+1)].tileLabel.configure(bg=player1.color)
+        
+        if checkCapture(self.row-1,self.col) == True: #top
+            allTiles[(self.row-1)*COLS+(self.col)].tile.configure(bg=player1.color)
+            allTiles[(self.row-1)*COLS+(self.col)].tileLabel.configure(bg=player1.color)
+
+        if checkCapture((self.row+1),self.col) == True: #bottom
+            allTiles[(self.row+1)*COLS+(self.col)].tile.configure(bg=player1.color)
+            allTiles[(self.row+1)*COLS+(self.col)].tileLabel.configure(bg=player1.color)
+        
+
     def rightClick(self,event):
         #if tile is already color selected, will turn neutral
         if (self.tile['background'] == player2.color):
@@ -21,10 +38,30 @@ class button:
             self.tile.configure(bg=player2.color)
             self.tileLabel.configure(bg=player2.color)
         
+        if checkCapture(self.row,self.col-1) == True: #left
+            allTiles[self.row*COLS+(self.col-1)].tile.configure(bg=player2.color)
+            allTiles[self.row*COLS+(self.col-1)].tileLabel.configure(bg=player2.color)
+        
+        if checkCapture(self.row,self.col+1) == True: #right
+            allTiles[self.row*COLS+(self.col+1)].tile.configure(bg=player2.color)
+            allTiles[self.row*COLS+(self.col+1)].tileLabel.configure(bg=player2.color)
+        
+        if checkCapture(self.row-1,self.col) == True: #top
+            allTiles[(self.row-1)*COLS+(self.col)].tile.configure(bg=player2.color)
+            allTiles[(self.row-1)*COLS+(self.col)].tileLabel.configure(bg=player2.color)
 
-    def __init__(self,window, name, owner):
+        if checkCapture((self.row+1),self.col) == True: #bottom
+            allTiles[(self.row+1)*COLS+(self.col)].tile.configure(bg=player2.color)
+            allTiles[(self.row+1)*COLS+(self.col)].tileLabel.configure(bg=player2.color)
+
+        
+        
+
+    def __init__(self,window, name, owner,row,col):
         self.owner = owner
         self.name = name
+        self.row = row
+        self.col = col
 
         #Every board space has a frame and a label
         self.tile = tk.Frame(window, bg='old lace', bd=10,highlightbackground="black", 

@@ -20,10 +20,10 @@ if __name__ == '__main__':
         tileOwners.append(name[1])        
     
     
-    for i in range(7):
-        for j in range(12):
+    for i in range(ROWS):
+        for j in range(COLS):
             
-            btn = button(window, tileNames[i*12+j], tileOwners[i*12+j])
+            btn = button(window, tileNames[i*COLS+j], tileOwners[i*COLS+j],i,j)
             allTiles.append(btn)
             btn.tile.grid(row=i,column=j,sticky="NSWE")
             window.rowconfigure(i,weight=1)
