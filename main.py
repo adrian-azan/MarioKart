@@ -3,13 +3,14 @@ from kivy.uix.widget import Widget
 
 import tkinter as tk
 from button import *
-
+from player import player
 
 
 if __name__ == '__main__':
     window = tk.Tk()
     tileNames = []
     tileOwners = []
+    
     
 
     input = open("master.txt",'r')
@@ -31,7 +32,9 @@ if __name__ == '__main__':
             
             
     
-   
+    window.rowconfigure(ROWS,weight=1)
+    player1.setFrame(window,ROWS)
+    player2.setFrame(window,ROWS+1)
 
     window.mainloop()
     
