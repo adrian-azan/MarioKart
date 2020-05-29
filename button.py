@@ -49,4 +49,8 @@ class button:
         self.tile.bind("<Button-3>", self.rightClick)
         self.tileLabel.bind("<Button-3>", self.rightClick)
 
-        
+    def clear(self):
+        self.owner = ""
+        self.name = ""
+        self.tileLabel['bg'] = DEFAULT_COLOR
+        self.tile['bg'] = DEFAULT_COLOR

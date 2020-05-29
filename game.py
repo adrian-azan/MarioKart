@@ -1,5 +1,6 @@
 
 from player import player
+import re
 
 COLS = 14
 ROWS = 6
@@ -9,15 +10,15 @@ allTiles = []
 DEFAULT_COLOR = 'old lace'
 
 
-def isCaptured(row,col):
-    p1Score = 0
-    p2Score = 0
-    
+def isCaptured(row,col):       
     captured = True
     if (row < 0 or row >=ROWS or col < 0 or col >= COLS):
         return False
 
     if (allTiles[row*COLS+col].tile['bg'] != DEFAULT_COLOR):
+        return False
+
+    if (re.search("SPA",allTiles[row*COLS+col].name) ):
         return False
 
     if (col != 0):
@@ -81,3 +82,8 @@ def updateScores():
 
     player1.updateScore()
     player2.updateScore()
+
+def clearBoard():
+    for tile in allTiles:
+        tile.clear()
+        updateScores()
