@@ -2,12 +2,18 @@
 from player import player
 import re
 
+
+#Dictionary
+#Key: Name of the Cup
+
+            
+
 COLS = 14
 ROWS = 6
 player1 = player("Adrian","red")
 player2 = player("Amanda","blue")
 allTiles = []
-DEFAULT_COLOR = 'old lace'
+DEFAULT_COLOR = ('old lace','lavender')
 
 
 def isCaptured(row,col):       
@@ -15,12 +21,10 @@ def isCaptured(row,col):
     if (row < 0 or row >=ROWS or col < 0 or col >= COLS):
         return False
 
-    if (allTiles[row*COLS+col].tile['bg'] != DEFAULT_COLOR):
+    if (allTiles[row*COLS+col].tile['bg'] not in DEFAULT_COLOR):
         return False
 
-    if (re.search("SPA",allTiles[row*COLS+col].name) ):
-        return False
-
+    
     if (col != 0):
         left = allTiles[row*COLS+(col-1)].tile
     else:
@@ -41,13 +45,13 @@ def isCaptured(row,col):
     else:
         bottom = None
         
-    if (bottom != None and bottom['bg'] == DEFAULT_COLOR):
+    if (bottom != None and bottom['bg'] in DEFAULT_COLOR):
         captured = False
-    if (top != None and top['bg'] == DEFAULT_COLOR):
+    if (top != None and top['bg'] in DEFAULT_COLOR):
         captured = False
-    if (left != None and left['bg'] == DEFAULT_COLOR):
+    if (left != None and left['bg'] in DEFAULT_COLOR):
         captured = False
-    if (right != None and right['bg'] == DEFAULT_COLOR):
+    if (right != None and right['bg'] in DEFAULT_COLOR):
         captured = False
 
     return captured
@@ -57,18 +61,22 @@ def checkCaptures(player,row,col):
     if isCaptured(row,col-1) == True: #left
         allTiles[row*COLS+(col-1)].tile.configure(bg=player.color)
         allTiles[row*COLS+(col-1)].tileLabel.configure(bg=player.color)
+        allTiles[row*COLS+(col-1)].owner = player.name
     
     if isCaptured(row,col+1) == True: #right
         allTiles[row*COLS+(col+1)].tile.configure(bg=player.color)
         allTiles[row*COLS+(col+1)].tileLabel.configure(bg=player.color)
-    
+        allTiles[row*COLS+(col+1)].owner = player.name
+
     if isCaptured(row-1,col) == True: #top
         allTiles[(row-1)*COLS+(col)].tile.configure(bg=player.color)
         allTiles[(row-1)*COLS+(col)].tileLabel.configure(bg=player.color)
+        allTiles[(row-1)*COLS+(col)].owner = player.name
 
     if isCaptured((row+1),col) == True: #bottom
         allTiles[(row+1)*COLS+(col)].tile.configure(bg=player.color)
         allTiles[(row+1)*COLS+(col)].tileLabel.configure(bg=player.color)
+        allTiles[(row+1)*COLS+(col)].owner = player.name
 
 def updateScores():
     player1.score = 0
