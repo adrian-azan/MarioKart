@@ -1,0 +1,338 @@
+[
+    {
+        "name": "MARIO",
+        "owner": "OPEN!"
+    },
+    {
+        "name": "SPAC0",
+        "owner": "OPEN!"
+    },
+    {
+        "name": "LUIGI",
+        "owner": "OPEN!"
+    },
+    {
+        "name": "SPAC1",
+        "owner": "OPEN!"
+    },
+    {
+        "name": "PEACH",
+        "owner": "OPEN!"
+    },
+    {
+        "name": "SPAC2",
+        "owner": "OPEN!"
+    },
+    {
+        "name": "DAISY",
+        "owner": "OPEN!"
+    },
+    {
+        "name": "SPAC3",
+        "owner": "OPEN!"
+    },
+    {
+        "name": "ROSAL",
+        "owner": "OPEN!"
+    },
+    {
+        "name": "SPAC4",
+        "owner": "OPEN!"
+    },
+    {
+        "name": "METMA",
+        "owner": "OPEN!"
+    },
+    {
+        "name": "SPAC5",
+        "owner": "OPEN!"
+    },
+    {
+        "name": "YOSHI",
+        "owner": "OPEN!"
+    },
+    {
+        "name": "SPAC6",
+        "owner": "OPEN!"
+    },
+    {
+        "name": "SPAC7",
+        "owner": "OPEN!"
+    },
+    {
+        "name": "TOAD!",
+        "owner": "OPEN!"
+    },
+    {
+        "name": "SPAC8",
+        "owner": "OPEN!"
+    },
+    {
+        "name": "KOPPA",
+        "owner": "OPEN!"
+    },
+    {
+        "name": "SPAC9",
+        "owner": "OPEN!"
+    },
+    {
+        "name": "SHYGU",
+        "owner": "OPEN!"
+    },
+    {
+        "name": "SPA10",
+        "owner": "OPEN!"
+    },
+    {
+        "name": "LAKIT",
+        "owner": "OPEN!"
+    },
+    {
+        "name": "SPA11",
+        "owner": "OPEN!"
+    },
+    {
+        "name": "TODET",
+        "owner": "OPEN!"
+    },
+    {
+        "name": "SPA12",
+        "owner": "OPEN!"
+    },
+    {
+        "name": "BMARI",
+        "owner": "OPEN!"
+    },
+    {
+        "name": "SPA13",
+        "owner": "OPEN!"
+    },
+    {
+        "name": "BLUIG",
+        "owner": "OPEN!"
+    },
+    {
+        "name": "BPEAC",
+        "owner": "OPEN!"
+    },
+    {
+        "name": "SPA14",
+        "owner": "OPEN!"
+    },
+    {
+        "name": "BDAIS",
+        "owner": "OPEN!"
+    },
+    {
+        "name": "SPA15",
+        "owner": "OPEN!"
+    },
+    {
+        "name": "BROSA",
+        "owner": "OPEN!"
+    },
+    {
+        "name": "SPA16",
+        "owner": "OPEN!"
+    },
+    {
+        "name": "METPE",
+        "owner": "OPEN!"
+    },
+    {
+        "name": "SPA17",
+        "owner": "OPEN!"
+    },
+    {
+        "name": "BOWSE",
+        "owner": "OPEN!"
+    },
+    {
+        "name": "SPA18",
+        "owner": "OPEN!"
+    },
+    {
+        "name": "DONKE",
+        "owner": "OPEN!"
+    },
+    {
+        "name": "SPA19",
+        "owner": "OPEN!"
+    },
+    {
+        "name": "WARIO",
+        "owner": "OPEN!"
+    },
+    {
+        "name": "SPA20",
+        "owner": "OPEN!"
+    },
+    {
+        "name": "SPA21",
+        "owner": "OPEN!"
+    },
+    {
+        "name": "WALUI",
+        "owner": "OPEN!"
+    },
+    {
+        "name": "SPA22",
+        "owner": "OPEN!"
+    },
+    {
+        "name": "IGGY!",
+        "owner": "OPEN!"
+    },
+    {
+        "name": "SPA23",
+        "owner": "OPEN!"
+    },
+    {
+        "name": "ROY!!",
+        "owner": "OPEN!"
+    },
+    {
+        "name": "SPA24",
+        "owner": "OPEN!"
+    },
+    {
+        "name": "LEMMY",
+        "owner": "OPEN!"
+    },
+    {
+        "name": "SPA25",
+        "owner": "OPEN!"
+    },
+    {
+        "name": "WENDY",
+        "owner": "OPEN!"
+    },
+    {
+        "name": "SPA26",
+        "owner": "OPEN!"
+    },
+    {
+        "name": "MIIII",
+        "owner": "OPEN!"
+    },
+    {
+        "name": "SPA27",
+        "owner": "OPEN!"
+    },
+    {
+        "name": "LARRY",
+        "owner": "OPEN!"
+    },
+    {
+        "name": "LUDWI",
+        "owner": "OPEN!"
+    },
+    {
+        "name": "SPA28",
+        "owner": "OPEN!"
+    },
+    {
+        "name": "GSQUI",
+        "owner": "OPEN!"
+    },
+    {
+        "name": "SPA29",
+        "owner": "OPEN!"
+    },
+    {
+        "name": "BSQUI",
+        "owner": "OPEN!"
+    },
+    {
+        "name": "SPA30",
+        "owner": "OPEN!"
+    },
+    {
+        "name": "LINK!",
+        "owner": "OPEN!"
+    },
+    {
+        "name": "SPA31",
+        "owner": "OPEN!"
+    },
+    {
+        "name": "BVILL",
+        "owner": "OPEN!"
+    },
+    {
+        "name": "SPA32",
+        "owner": "OPEN!"
+    },
+    {
+        "name": "GVILL",
+        "owner": "OPEN!"
+    },
+    {
+        "name": "SPA33",
+        "owner": "OPEN!"
+    },
+    {
+        "name": "ISABE",
+        "owner": "OPEN!"
+    },
+    {
+        "name": "SPA34",
+        "owner": "OPEN!"
+    },
+    {
+        "name": "SPA35",
+        "owner": "OPEN!"
+    },
+    {
+        "name": "TANOO",
+        "owner": "OPEN!"
+    },
+    {
+        "name": "SPA36",
+        "owner": "OPEN!"
+    },
+    {
+        "name": "CATPE",
+        "owner": "OPEN!"
+    },
+    {
+        "name": "SPA37",
+        "owner": "OPEN!"
+    },
+    {
+        "name": "JRBOW",
+        "owner": "OPEN!"
+    },
+    {
+        "name": "SPA38",
+        "owner": "OPEN!"
+    },
+    {
+        "name": "BONES",
+        "owner": "OPEN!"
+    },
+    {
+        "name": "SPA39",
+        "owner": "OPEN!"
+    },
+    {
+        "name": "DRYBO",
+        "owner": "OPEN!"
+    },
+    {
+        "name": "SPA40",
+        "owner": "OPEN!"
+    },
+    {
+        "name": "KINGB",
+        "owner": "OPEN!"
+    },
+    {
+        "name": "SPA41",
+        "owner": "OPEN!"
+    },
+    {
+        "name": "MORT!",
+        "owner": "OPEN!"
+    }
+]

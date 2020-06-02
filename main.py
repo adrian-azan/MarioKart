@@ -4,25 +4,23 @@ from kivy.uix.widget import Widget
 import tkinter as tk
 from tile import *
 from player import player
+import json as js
 import game as gm
 import random as rn
 import RandomCourseGenerator as randCourse
+import re
 def loadFile():
-    
-
     def okClick():
-        fileName = fileNameEntry.get()
-        if (fileName[-4:] != ".txt"):
-            fileName += ".txt"
+        fileName = "savedGames\\" + fileNameEntry.get()
+        if (not re.search("$.json",fileName)):
+            fileName += ".json"
 
-        input = open(fileName,'r')
-        names = input.readlines()
-        for name in names:
-            name = name.split()
-            tileNames.append(name[0])
-            tileOwners.append(name[1])   
+        with open(fileName, "r") as inputFile:
+            gm.jsonTiles = js.load(inputFile)
 
-        input.close() 
+        for jsonTile,boardTile in zip(gm.jsonTiles,gm.allTiles):
+            boardTile.owner = jsonTile["owner"]
+        gm.updateScores()
         popup.destroy()
 
     popup = tk.Tk()
@@ -40,19 +38,17 @@ def loadFile():
 
 def saveFile():
     def okClick():
-        fileName = fileNameEntry.get()
-        if (fileName[-4:] != ".txt"):
-            fileName += ".txt"
+        fileName = "savedGames\\"+fileNameEntry.get()
+        if (not re.search("$.json",fileName)):
+            fileName += ".json"
 
-        output = open(fileName,'w')
-        for tile in gm.allTiles:
-            name = tile.name
-            owner = tile.owner
-            output.write(name + " " + owner + "\n")
-             
+        with open(fileName, "w") as outputFile:
+            outputFile.write(js.dumps(gm.jsonTiles,indent=4))
 
-        output.close() 
         popup.destroy()
+
+    for jsonTile,boardTile in zip(gm.jsonTiles,gm.allTiles):
+        jsonTile["owner"] = boardTile.owner
 
     popup = tk.Tk()
     popup.title = "Save Game"
@@ -79,38 +75,37 @@ if __name__ == '__main__':
     
     
     menubar = tk.Menu(window)
-    fileMenu = tk.Menu(menubar,tearoff=0)
-    
+    fileMenu = tk.Menu(menubar,tearoff=0)    
     editMenu = tk.Menu(menubar, tearoff=0)
+
     fileMenu.add_command(label="Save", command=saveFile)
+    fileMenu.add_command(label="Load", command=loadFile)
     editMenu.add_command(label="Clear",command=gm.clearBoard)
     
     menubar.add_cascade(label="File", menu=fileMenu)
     menubar.add_cascade(label="Edit", menu=editMenu)
     window.config(menu=menubar)
-
-
-
-    input = open("master.txt",'r')
-    names = input.readlines()
-    for name in names:
-        name = name.split()
-        tileNames.append(name[0])
-        tileOwners.append(name[1])   
-
-    input.close()     
     
-    pretty = 0
-   
-
-    for i in range(gm.ROWS):
-        for j in range(gm.COLS):
-            
-            btn = tile(window, tileNames[i*gm.COLS+j], tileOwners[i*gm.COLS+j],i,j)
+    
+    with open("newMaster.json",'r') as jsonInput:
+        gm.jsonTiles=js.load(jsonInput)
+    
+      
+    i = 0
+    j = 0
+    for boardTile in gm.jsonTiles:        
+            btn = tile(window, boardTile,(i,j))
             gm.allTiles.append(btn)
             btn.tile.grid(row=i,column=j,sticky="NSWE")
             window.rowconfigure(i,weight=1)
             window.columnconfigure(j,weight=1)
+
+            j+=1
+            if (j >= gm.COLS):
+                j=0
+                i+=1
+            if i>= gm.ROWS:
+                i=0
             
             
     

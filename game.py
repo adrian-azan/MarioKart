@@ -13,6 +13,7 @@ ROWS = 6
 player1 = player("Adrian","red")
 player2 = player("Amanda","blue")
 allTiles = []
+jsonTiles = []
 DEFAULT_COLOR = ('old lace','lavender')
 
 
@@ -82,10 +83,14 @@ def updateScores():
     player1.score = 0
     player2.score = 0
     for tile in allTiles:
-        if tile.tile['bg'] == player1.color:
+        if tile.owner == player1.name:
+            tile.tile["bg"] = player1.color
+            tile.tileLabel["bg"] = player1.color
             player1.score += 1
         
-        elif tile.tile['bg'] == player2.color:
+        elif tile.owner == player2.name:
+            tile.tile["bg"] = player2.color
+            tile.tileLabel["bg"] = player2.color
             player2.score += 1
 
     player1.updateScore()

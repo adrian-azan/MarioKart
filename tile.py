@@ -5,24 +5,28 @@ import game as gm
 
 class tile:
     def leftClick(self,event):
-        if (self.tile['background'] == gm.player1.color):
+        if (self.owner == gm.player1.name):
             self.tile.configure(bg = 'old lace')
             self.tileLabel.configure(bg = 'old lace')
+            self.owner = "OPEN!"
         else:
             self.tile.configure(bg=gm.player1.color)
             self.tileLabel.configure(bg=gm.player1.color)
+            self.owner = gm.player1.name
         
         gm.checkCaptures(gm.player1,self.row,self.col)
         gm.updateScores()
 
     def rightClick(self,event):
         #if tile is already color selected, will turn neutral
-        if (self.tile['background'] == gm.player2.color):
+        if (self.owner == gm.player2.name):
             self.tile.configure(bg = 'old lace')
             self.tileLabel.configure(bg = 'old lace')
+            self.owner = "OPEN!"
         else:
             self.tile.configure(bg=gm.player2.color)
             self.tileLabel.configure(bg=gm.player2.color)
+            self.owner = gm.player2.name
         
         gm.checkCaptures(gm.player2,self.row,self.col)
         gm.updateScores()
@@ -30,11 +34,11 @@ class tile:
         
         
 
-    def __init__(self,window, name, owner,row,col):
-        self.owner = owner
-        self.name = name
-        self.row = row
-        self.col = col
+    def __init__(self,window, boardTile,dim):
+        self.owner = boardTile["owner"]
+        self.name = boardTile["name"]
+        self.row = dim[0]
+        self.col = dim[1]
 
         #Every board space has a frame and a label
         
