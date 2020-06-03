@@ -15,8 +15,17 @@ def loadFile():
         if (not re.search("$.json",fileName)):
             fileName += ".json"
 
-        with open(fileName, "r") as inputFile:
-            gm.jsonTiles = js.load(inputFile)
+        try:
+            with open(fileName, "r") as inputFile:
+                gm.jsonTiles = js.load(inputFile)
+        except:
+            fail = tk.Tk()
+            notFound = tk.Label(fail, text=fileName + " was not found")
+            ok2 = tk.Button(fail,text="OK", command=fail.destroy)  
+            notFound.pack()
+            ok2.pack()
+            fail.mainloop()
+
 
         for jsonTile,boardTile in zip(gm.jsonTiles,gm.allTiles):
             boardTile.owner = jsonTile["owner"]
@@ -64,9 +73,6 @@ def saveFile():
 
     
     
-
-
-
 
 if __name__ == '__main__':
     window = tk.Tk()
