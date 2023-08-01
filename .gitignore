@@ -1,0 +1,10 @@
+
+.vs/MarioKart/config/applicationhost.config
+*.vsidx
+*.lock
+.vs/MarioKart/v17/.wsuo
+.vs/ProjectSettings.json
+*.sqlite
+.vs/tasks.vs.json
+.vs/VSWorkspaceState.json
+*.pyc

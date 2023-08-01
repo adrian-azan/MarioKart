@@ -1,12 +1,5 @@
-
 from player import player
-import re
 
-
-#Dictionary
-#Key: Name of the Cup
-
-            
 
 COLS = 14
 ROWS = 6

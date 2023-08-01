@@ -1,14 +1,11 @@
-from kivy.app import App
-from kivy.uix.widget import Widget
-
 import tkinter as tk
 from tile import *
 from player import player
 import json as js
 import game as gm
-import random as rn
 import RandomCourseGenerator as randCourse
 import re
+
 def loadFile():
     def okClick():
         fileName = "savedGames\\" + fileNameEntry.get()
@@ -26,14 +23,14 @@ def loadFile():
             ok2.pack()
             fail.mainloop()
 
-
+        gm.clearBoard()
         for jsonTile,boardTile in zip(gm.jsonTiles,gm.allTiles):
             boardTile.owner = jsonTile["owner"]
         gm.updateScores()
         popup.destroy()
 
     popup = tk.Tk()
-    popup.title = "Save Game"
+    popup.title = "Load Game"
     fileNameLabel = tk.Label(popup, text= "Enter File Name")
     fileNameEntry = tk.Entry(popup)
     ok = tk.Button(popup,text="OK", command=okClick)
@@ -71,8 +68,7 @@ def saveFile():
     ok.pack()
     popup.mainloop()
 
-    
-    
+
 
 if __name__ == '__main__':
     window = tk.Tk()
